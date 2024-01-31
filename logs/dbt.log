@@ -1,0 +1,381 @@
+[0m18:00:00.083324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d65f7d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d671ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d6721d0>]}
+
+
+============================== 18:00:00.089648 | 31ea2c27-e06f-44b7-bc17-236ce9d62106 ==============================
+[0m18:00:00.089648 [info ] [MainThread]: Running with dbt=1.7.6
+[0m18:00:00.090325 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/alexandergunawan/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:00:15.886443 [debug] [MainThread]: Starter project path: /Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/include/starter_project
+[0m18:00:15.894126 [info ] [MainThread]: 
+Your new dbt project "steam_reviews" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:00:15.894736 [info ] [MainThread]: Setting up your profile.
+[0m18:00:15.895985 [error] [MainThread]: Encountered an error:
+while scanning for the next token
+found character '\t' that cannot start any token
+  in "/Users/alexandergunawan/.dbt/profiles.yml", line 2, column 1
+[0m18:00:15.902869 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/cli/main.py", line 515, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/task/init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/task/init.py", line 250, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/task/init.py", line 211, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 64, in compose_node
+    if self.check_event(AliasEvent):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+                         ^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/parser.py", line 449, in parse_block_mapping_value
+    if not self.check_token(KeyToken, ValueToken, BlockEndToken):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/scanner.py", line 258, in fetch_more_tokens
+    raise ScannerError("while scanning for the next token", None,
+yaml.scanner.ScannerError: while scanning for the next token
+found character '\t' that cannot start any token
+  in "/Users/alexandergunawan/.dbt/profiles.yml", line 2, column 1
+
+[0m18:00:15.921663 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 15.871437, "process_user_time": 1.861982, "process_kernel_time": 0.320919, "process_mem_max_rss": "105676800", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m18:00:15.922368 [debug] [MainThread]: Command `dbt init` failed at 18:00:15.922200 after 15.87 seconds
+[0m18:00:15.922844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d67fd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d660c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109045710>]}
+[0m18:00:15.923286 [debug] [MainThread]: Flushing usage events
+[0m18:00:58.193655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c897e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c8a9710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c8a9e10>]}
+
+
+============================== 18:00:58.197812 | 1639cc33-a504-42ea-a267-fdeaece2f176 ==============================
+[0m18:00:58.197812 [info ] [MainThread]: Running with dbt=1.7.6
+[0m18:00:58.198451 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': '/Users/alexandergunawan/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m18:01:01.363010 [info ] [MainThread]: A project called steam_reviews already exists here.
+[0m18:01:01.365336 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 3.1899786, "process_user_time": 1.639224, "process_kernel_time": 0.185268, "process_mem_max_rss": "103612416", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m18:01:01.366199 [debug] [MainThread]: Command `dbt init` succeeded at 18:01:01.365964 after 3.19 seconds
+[0m18:01:01.366822 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c898c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c8b6e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081c0890>]}
+[0m18:01:01.367470 [debug] [MainThread]: Flushing usage events
+[0m18:01:08.490073 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df2e9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df3d5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df3dc90>]}
+
+
+============================== 18:01:08.494247 | fd977cbd-e58f-4941-ae3c-d1512d7ca59c ==============================
+[0m18:01:08.494247 [info ] [MainThread]: Running with dbt=1.7.6
+[0m18:01:08.494860 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/alexandergunawan/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m18:01:09.670292 [debug] [MainThread]: Starter project path: /Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/include/starter_project
+[0m18:01:09.678780 [info ] [MainThread]: 
+Your new dbt project "steam" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:01:09.679344 [info ] [MainThread]: Setting up your profile.
+[0m18:01:09.680429 [error] [MainThread]: Encountered an error:
+while scanning for the next token
+found character '\t' that cannot start any token
+  in "/Users/alexandergunawan/.dbt/profiles.yml", line 2, column 1
+[0m18:01:09.686411 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/cli/main.py", line 515, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/task/init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/task/init.py", line 250, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/task/init.py", line 211, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 64, in compose_node
+    if self.check_event(AliasEvent):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+                         ^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/parser.py", line 449, in parse_block_mapping_value
+    if not self.check_token(KeyToken, ValueToken, BlockEndToken):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/scanner.py", line 258, in fetch_more_tokens
+    raise ScannerError("while scanning for the next token", None,
+yaml.scanner.ScannerError: while scanning for the next token
+found character '\t' that cannot start any token
+  in "/Users/alexandergunawan/.dbt/profiles.yml", line 2, column 1
+
+[0m18:01:09.688208 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 1.2157513, "process_user_time": 1.65866, "process_kernel_time": 0.186265, "process_mem_max_rss": "104980480", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m18:01:09.688799 [debug] [MainThread]: Command `dbt init` failed at 18:01:09.688648 after 1.22 seconds
+[0m18:01:09.689230 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df34950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df4e4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10994d810>]}
+[0m18:01:09.689679 [debug] [MainThread]: Flushing usage events
+[0m18:11:11.767044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6e8950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6d5e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b75ff50>]}
+
+
+============================== 18:11:11.773885 | 7394df5a-c24c-4932-b878-cf8e756734a7 ==============================
+[0m18:11:11.773885 [info ] [MainThread]: Running with dbt=1.7.6
+[0m18:11:11.774801 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/alexandergunawan/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:11:13.129059 [info ] [MainThread]: A project called steam already exists here.
+[0m18:11:13.131889 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 1.4498248, "process_user_time": 1.932789, "process_kernel_time": 0.313849, "process_mem_max_rss": "105668608", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m18:11:13.132703 [debug] [MainThread]: Command `dbt init` succeeded at 18:11:13.132487 after 1.45 seconds
+[0m18:11:13.133286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6dc9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b037d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107051250>]}
+[0m18:11:13.133852 [debug] [MainThread]: Flushing usage events
+[0m18:11:36.459410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fd5ee50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fdacd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fdc3fd0>]}
+
+
+============================== 18:11:36.462697 | 05b2cf06-6c15-4f22-bcaa-84ccd8a9aef0 ==============================
+[0m18:11:36.462697 [info ] [MainThread]: Running with dbt=1.7.6
+[0m18:11:36.463214 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/alexandergunawan/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt init', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:11:39.705863 [debug] [MainThread]: Starter project path: /Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/include/starter_project
+[0m18:11:39.716387 [info ] [MainThread]: 
+Your new dbt project "steam_reviews" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:11:39.717044 [info ] [MainThread]: Setting up your profile.
+[0m18:11:39.720114 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No adapters available. Learn how to install an adapter by going to https://docs.getdbt.com/docs/connect-adapters#install-using-the-cli
+[0m18:11:39.722059 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 3.3219543, "process_user_time": 1.67347, "process_kernel_time": 0.185576, "process_mem_max_rss": "106721280", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m18:11:39.722829 [debug] [MainThread]: Command `dbt init` failed at 18:11:39.722630 after 3.32 seconds
+[0m18:11:39.723370 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fd3ccd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fde3a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fde3ed0>]}
+[0m18:11:39.723907 [debug] [MainThread]: Flushing usage events
+[0m18:13:03.006722 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106193850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061a1bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061a22d0>]}
+
+
+============================== 18:13:03.013121 | 035192cb-0bb8-4d91-81ed-50735785ead7 ==============================
+[0m18:13:03.013121 [info ] [MainThread]: Running with dbt=1.7.6
+[0m18:13:03.013943 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/alexandergunawan/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt init', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:13:05.117245 [debug] [MainThread]: Starter project path: /Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/include/starter_project
+[0m18:13:05.127169 [info ] [MainThread]: 
+Your new dbt project "steam" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:13:05.127746 [info ] [MainThread]: Setting up your profile.
+[0m18:13:05.129924 [error] [MainThread]: Encountered an error:
+while scanning for the next token
+found character '\t' that cannot start any token
+  in "/Users/alexandergunawan/.dbt/profiles.yml", line 14, column 1
+[0m18:13:05.137478 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/cli/main.py", line 515, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/task/init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/task/init.py", line 250, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/task/init.py", line 211, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+                         ^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "/Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/yaml/scanner.py", line 258, in fetch_more_tokens
+    raise ScannerError("while scanning for the next token", None,
+yaml.scanner.ScannerError: while scanning for the next token
+found character '\t' that cannot start any token
+  in "/Users/alexandergunawan/.dbt/profiles.yml", line 14, column 1
+
+[0m18:13:05.140022 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 2.1541455, "process_user_time": 1.894139, "process_kernel_time": 0.316115, "process_mem_max_rss": "104869888", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m18:13:05.140738 [debug] [MainThread]: Command `dbt init` failed at 18:13:05.140558 after 2.15 seconds
+[0m18:13:05.141243 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106194dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061b0090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x101b61790>]}
+[0m18:13:05.141776 [debug] [MainThread]: Flushing usage events
+[0m18:13:34.167062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c4f8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108cdbed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108cdbfd0>]}
+
+
+============================== 18:13:34.172648 | 1f5770ce-6231-45f7-a12d-e3ba9dc95542 ==============================
+[0m18:13:34.172648 [info ] [MainThread]: Running with dbt=1.7.6
+[0m18:13:34.173424 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/alexandergunawan/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m18:13:37.030994 [debug] [MainThread]: Starter project path: /Users/alexandergunawan/miniconda3/envs/dataeng/lib/python3.11/site-packages/dbt/include/starter_project
+[0m18:13:37.040428 [info ] [MainThread]: 
+Your new dbt project "steam_reviews" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:13:37.041065 [info ] [MainThread]: Setting up your profile.
+[0m18:15:36.374259 [info ] [MainThread]: Profile steam_reviews written to /Users/alexandergunawan/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:15:36.382709 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 122.29311, "process_user_time": 1.830292, "process_kernel_time": 0.264884, "process_mem_max_rss": "108138496", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m18:15:36.384618 [debug] [MainThread]: Command `dbt init` succeeded at 18:15:36.384198 after 122.30 seconds
+[0m18:15:36.386130 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c50d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1045910d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104635910>]}
+[0m18:15:36.387526 [debug] [MainThread]: Flushing usage events
+[0m18:16:13.730201 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e003790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e001510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e034850>]}
+
+
+============================== 18:16:13.736294 | 284752bd-1d23-43da-894a-2484915aca0f ==============================
+[0m18:16:13.736294 [info ] [MainThread]: Running with dbt=1.7.6
+[0m18:16:13.737091 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/alexandergunawan/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m18:16:13.737828 [info ] [MainThread]: dbt version: 1.7.6
+[0m18:16:13.738247 [info ] [MainThread]: python version: 3.11.5
+[0m18:16:13.738645 [info ] [MainThread]: python path: /Users/alexandergunawan/miniconda3/envs/dataeng/bin/python
+[0m18:16:13.739014 [info ] [MainThread]: os info: macOS-10.16-x86_64-i386-64bit
+[0m18:16:13.892975 [info ] [MainThread]: Using profiles dir at /Users/alexandergunawan/.dbt
+[0m18:16:13.893375 [info ] [MainThread]: Using profiles.yml file at /Users/alexandergunawan/.dbt/profiles.yml
+[0m18:16:13.893680 [info ] [MainThread]: Using dbt_project.yml file at /Users/alexandergunawan/data_engineer/dbt_project.yml
+[0m18:16:13.894044 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m18:16:13.897784 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.25238323, "process_user_time": 2.049445, "process_kernel_time": 0.360836, "process_mem_max_rss": "108130304", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m18:16:13.898584 [debug] [MainThread]: Command `dbt debug` failed at 18:16:13.898355 after 0.25 seconds
+[0m18:16:13.899090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df911d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e100e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d8fc290>]}
+[0m18:16:13.899599 [debug] [MainThread]: Flushing usage events
